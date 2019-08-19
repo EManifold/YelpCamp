@@ -16,8 +16,13 @@ var commentRoutes = require('./routes/comments'),
 	 campgroundRoutes = require('./routes/campgrounds'),
 	 indexRoutes = require('./routes/index');
 
-app.listen(3000, function() {
-	console.log('YelpCamp server started');
+// app.listen(3000, function() {
+// 	console.log('YelpCamp server started');
+// });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
 mongoose.connect("mongodb+srv://EManifold:Pollyfrosty123@cluster0-lbblu.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true,
