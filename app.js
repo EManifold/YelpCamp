@@ -25,6 +25,12 @@ app.listen(PORT, () => {
     console.log(`Our app is running on port ${ PORT }`);
 });
 
+// var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp";
+// mongoose.connect(url, { useNewUrlParser: true });
+
+
+// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+
 mongoose.connect("mongodb+srv://EManifold:Pollyfrosty123@cluster0-lbblu.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true,
 	useCreateIndex: true
 }).then(() => {
@@ -32,6 +38,11 @@ mongoose.connect("mongodb+srv://EManifold:Pollyfrosty123@cluster0-lbblu.mongodb.
 }).catch(err => {
 	console.log('ERROR:', err.message);
 });
+
+// app.listen(process.env.PORT, process.env.IP, function() {
+// 	console.log('Yelpcamp server started with Colts code');
+// });
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
